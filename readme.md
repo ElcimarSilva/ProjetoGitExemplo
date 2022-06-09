@@ -30,6 +30,11 @@
 
     git push origin nomedabranch serve para subir os arquivos, quando se esta na main não é preciso do origin porém quando se esta em outra branch é necessario especificar qual é ela.
 
+# Merge reverso com a master (processo realizado ao finalizar uma tarefa e abrir um merge request)
+- git pull -p (dentro da master)
+- git merge master (dentro da branch trabalhada)
+- git push
+
 # No ambiente profissional utilizado para trabalhar, usamos chave ssh que foi confugurado através deste link 
     https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/
 
