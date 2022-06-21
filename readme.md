@@ -40,4 +40,8 @@
 
 # Video explicação git 
     https://www.youtube.com/watch?v=UBAX-13g8OM
-#teste
+
+# Comandos utéis
+
+- git log --oneline #para verificar o historico de commits
+- git remote -v #para verificar o repo remoto
