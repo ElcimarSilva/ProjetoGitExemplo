@@ -28,3 +28,4 @@ git config -l
 # Comandos utéis
 - git log --oneline #para verificar o historico de commits
 - git remote -v #para verificar o repo remoto
+- git -T git@github.com # para verificar se chave ssh esta configurada
