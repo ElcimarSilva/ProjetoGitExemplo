@@ -28,3 +28,6 @@ git config -l
 # Comandos utéis
 - git log --oneline #para verificar o historico de commits
 - git remote -v #para verificar o repo remoto
+
+
+https://www.treinaweb.com.br/blog/comandos-do-git-que-voce-precisa-conhecer-parte-2-repositorios-remotos#:~:text=1%20%2D%20Clonando%20um%20Reposit%C3%B3rio%20Remoto,%2C%20Gitlab%2C%20Bitbucket%2C%20etc.
