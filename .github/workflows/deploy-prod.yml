@@ -13,7 +13,7 @@ jobs:
 
       - name: Publish Release and Merge to Main
         run: |
-          RELEASE_NAME=$(echo "${GITHUB_REF/refs\/tags\//}")
+          RELEASE_NAME="${GITHUB_REF/refs\/tags\//}"
 
           # Publish the release
           gh release edit ${RELEASE_NAME} --title "Release ${RELEASE_NAME}" --notes "Release notes for ${RELEASE_NAME}" --draft false --prerelease false
