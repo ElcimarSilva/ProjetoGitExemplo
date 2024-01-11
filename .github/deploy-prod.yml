@@ -2,7 +2,7 @@ name: Publish Release, Deploy and Merge to Main
 
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   publish_release_and_merge:
@@ -11,15 +11,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Get Release Information
-        id: release_info
-        run: |
-          RELEASE_NAME=$(echo "${GITHUB_REF/refs\/tags\//}")
-          RELEASE_STATUS=$(gh release view ${RELEASE_NAME} --json status -q ".status")
-          echo "::set-output name=release_status::${RELEASE_STATUS}"
-
       - name: Publish Release and Merge to Main
-        if: steps.release_info.outputs.release_status == '"ready"'
         run: |
           RELEASE_NAME=$(echo "${GITHUB_REF/refs\/tags\//}")
 
