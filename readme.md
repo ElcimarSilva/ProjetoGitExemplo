@@ -17,6 +17,7 @@ git config -l
 
 - git push origin nomedabranch serve para subir os arquivos, quando se esta na main não é preciso do origin porém quando se esta em outra branch é necessario especificar qual é ela.
 
+
 # Merge reverso com a master (processo realizado ao finalizar uma tarefa e abrir um merge request)
 - git pull -p (dentro da master)
 - git merge master (dentro da branch trabalhada)
@@ -24,6 +25,7 @@ git config -l
 
 # Video explicação git 
 - https://www.youtube.com/watch?v=UBAX-13g8OM
+
 
 # Comandos utéis
 - git log --oneline #para verificar o historico de commits
