@@ -1,26 +1,15 @@
-name: Publish Release, Deploy and Merge to Main
-
+name: Generate release note
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - main
 
 jobs:
-  publish_release_and_merge:
+  release-on-push:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Publish Release and Merge to Main
-        run: |
-          RELEASE_NAME=$(echo "${GITHUB_REF/refs\/tags\//}")
-
-          # Publish the release
-          gh release edit ${RELEASE_NAME} --title "Release ${RELEASE_NAME}" --notes "Release notes for ${RELEASE_NAME}" --draft false --prerelease false
-
-          # Merge release branch to main
-          git fetch origin refs/heads/release/*:refs/remotes/origin/release/*
-          git checkout main
-          git pull
-          git merge origin/release/${RELEASE_NAME} --no-edit
-          git push origin main
+      - uses: rymndhng/release-on-push-action@master
+        with:
+          bump_version_scheme: minor
